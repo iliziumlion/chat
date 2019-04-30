@@ -1,28 +1,60 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+	<!-- Toolbar   -->
+    <v-toolbar app>
+      <v-toolbar-title class="headline text-uppercase">
+        <span class="font-weight-light">Chat</span>
+      </v-toolbar-title>
+	  <v-flex xs11>
+        <v-img
+          :src="require('./assets/logo.svg')"
+          class="my-3"
+          contain
+          height="50"
+        ></v-img>
+		</v-flex>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+	<!-- Content   -->
+    <v-content>
+      <Chat/>
+    </v-content>
+	<v-footer
+	    height="auto"
+	    color="primary lighten-1"
+	  >
+	    <v-layout
+	      justify-center
+	      row
+	      wrap
+	    >
+	      <v-flex
+	        primary
+	        lighten-2
+	        py-3
+	        text-xs-center
+	        white--text
+	        xs12
+	      >
+	        &copy;2018 — <strong>Vuetify</strong>
+	      </v-flex>
+	    </v-layout>
+	  </v-footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Chat from './components/Chat'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
+    Chat
+  },
+  data () {
+    return {
+
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
